@@ -1,0 +1,17 @@
+.login-banner-container {
+    background: rgba(216, 115, 106, 0.12);
+}
+.student-login-bg-image{
+    object-fit:contain;
+}
+.college-logo{
+    width: 250px;
+}
+.form-label{
+    font-size: 18px;
+    font-weight: 600;
+    color: #666666;
+}
+.student-heading{
+    color: green;
+}

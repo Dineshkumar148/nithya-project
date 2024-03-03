@@ -1,0 +1,274 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    height: 100%;
+}
+
+.sidebar{
+    height: 100%;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  
+}
+.header {
+    background: #FFF;
+    box-shadow: 2px 4px 16px 0px rgba(190, 190, 190, 0.25);
+    position: sticky;
+    top: 0;
+    z-index: 1;   
+}
+
+.search-container input {
+    width: 194px;
+    height: 39px;
+    border: 1px solid #D0D5DD;
+    border-radius: 4px;
+    outline: none;
+    color: #87888C;
+    font-family: Mulish;
+    font-size: 14px;
+    font-weight: 600;
+
+}
+
+.search-container input::placeholder {
+    color: #87888C;
+    font-family: Mulish;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+.search-container input[type="text"] {
+    outline: none;
+    color: #87888C;
+    font-family: Mulish;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.search-icon {
+    position: absolute;
+    color: #666666;
+}
+.profile-arrow>svg {
+    margin-top: 5px;
+}
+.admin-profile{
+    height: 50px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.dropdown-menu {
+    width: 200px;
+}
+
+.profile-arrow-mail {
+    color: #667085;
+}
+/* main section */
+
+.project-heading h1 {
+    color: #000;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.project-heading p a {
+    color: #1C1B1F;
+    font-family: Mulish;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.3px;
+}
+
+.project-heading p span {
+    color: #1C1B1F;
+    font-family: Mulish;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.3px;
+}
+
+.form-label-1 {
+    color: #20102B;
+    font-family: Mulish;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px;
+}
+
+/* upload logo button  */
+.Uploadlogo {
+    width: 273px;
+    height: 44px;
+    border: 1px solid #D0D5DD;
+    border-radius: 4px;
+}
+
+.Uploadlogo-text {
+    color: #999;
+    font-family: Mulish;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.image-upload>input {
+    display: none;
+}
+
+.image-upload img {
+    width: 18px;
+    height: 16px;
+    cursor: pointer;
+}
+
+
+
+.client-form input::placeholder {
+    color: #87888C;
+    font-family: Mulish;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.client-form input[type="text"] {
+    outline: none;
+    color: #87888C;
+    font-family: Mulish;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.form-control {
+    width: 273px;
+    height: 44px;
+}
+
+.same-adress-text {
+    color: #999;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.Contact-details-text {
+    color: #000;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+}
+
+
+
+.client-details-form input::placeholder {
+    color: #87888C;
+    font-family: Mulish;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.client-details-form input[type="text"] {
+    outline: none;
+    color: #87888C;
+    font-family: Mulish;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+.form-label-2 {
+    color: #20102B;
+    font-family: Mulish;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18px;
+}
+
+.button {
+    background-color: #FF8000;
+    width: 73px;
+    height: 44px;
+    flex-shrink: 0;
+    margin-top: 30px;
+    border-radius: 4px;
+
+}
+
+.button a {
+    color: white;
+
+}
+
+.create-client-table {
+    height: 46px;
+    background-color: #F4F4F4;
+    border-radius: 4px;
+    text-align: top;
+}
+
+.contact-details-row1 {
+    color: #878686;
+    font-family: Mulish;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.contact-details-row2 {
+    color: #000;
+    font-family: Mulish;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.material-symbols-outlined{
+    color: #7E7E7E;
+    font-size: 20px;
+}
+.client-create-pop-button{
+    width: 50px;
+height: 30px;
+}
+.delete-popup-text1{
+    color: #000;
+text-align: center;
+font-family: Mulish;
+font-size: 17px;
+font-style: normal;
+font-weight: 500;
+line-height: 20px;
+letter-spacing: 0.25px;
+}
+.delete-popup-text2{
+    color: #000;
+font-family: Mulish;
+font-size: 12px;
+font-style: normal;
+font-weight: 500;
+line-height: 20px; 
+letter-spacing: 0.25px;
+}
