@@ -32,7 +32,7 @@ $result = mysqli_query($conn,$query);
                 <nav class="navbar">
                     <div class="col-12 mb-5 d-flex justify-content-center">
                         <a href="Dashboard.html" class="navbar-brand">
-                            <img src="/images/svm-logo-2.jpg" class="img-fluid" alt="buildintlogo" />
+                            <img src="images/svm-logo-2.jpg" class="img-fluid" alt="buildintlogo" />
                         </a>
                     </div>
 
@@ -184,7 +184,7 @@ $result = mysqli_query($conn,$query);
                             </svg>
                         </div>
                         <div class="col-sm-2 d-flex ps-4 pt-2">
-                            <img src="/images/admin-Nithya.jpg" alt="profile" class="admin-profile">
+                            <img src="images/admin-Nithya.jpg" alt="profile" class="admin-profile">
                         </div>
                         <div class="col-sm-2 pt-3 ps-5">
                             <h6 class="fs-6 fw-semibold">Admin</h6>
@@ -245,11 +245,19 @@ $result = mysqli_query($conn,$query);
                <?php 
                while ($row = mysqli_fetch_assoc($result)) 
                {
-               
+                $student_id=$row['id'];
                 ?>
-               
-               <td><?php echo $row['staffname'] ?></td>
-               <td><?php echo $row['phonenumber'] ?></td>
+                <td>
+                <a href="/connection/empdetail.php?id= <?php echo $student_id ?>">
+                    <?php echo $student_id ?>
+                    </a>
+                    </td>
+               <td><?php echo $row['firstname'] ?>  <?php echo $row['lastname'] ?></td>
+               <td><?php echo $row['email'] ?></td>
+               <td><?php echo $row['dob'] ?></td>
+               <td><?php echo $row['department'] ?></td>
+
+
                </tr>
                <?php
                }

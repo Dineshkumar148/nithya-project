@@ -27,7 +27,7 @@
                 <nav class="navbar">
                     <div class="col-12 mb-5 d-flex justify-content-center">
                         <a href="Dashboard.html" class="navbar-brand">
-                            <img src="/images/svm-logo-2.jpg" class="img-fluid" alt="buildintlogo" />
+                            <img src="images/svm-logo-2.jpg" class="img-fluid" alt="vidyamandirlogo" />
                         </a>
                     </div>
 
@@ -179,7 +179,7 @@
                             </svg>
                         </div>
                         <div class="col-sm-2 d-flex ps-4 pt-2">
-                            <img src="/images/admin-Nithya.jpg" alt="profile" class="admin-profile">
+                            <img src="images/admin-Nithya.jpg" alt="profile" class="admin-profile">
                         </div>
                         <div class="col-sm-2 pt-3 ps-5">
                             <h6 class="fs-6 fw-semibold">Admin</h6>
@@ -241,8 +241,7 @@
                             <div class="image-upload d-flex align-items-center Uploadlogo mt-1">
                                 <label for="file-input">
                                     <span class="ms-3 Uploadlogo-text pe-5">Upload Staff Photo</span>
-                                    <img src="/images/upload-icon.svg" alt="upload-icon"
-                                        class="upload-icon ms-5 mb-1" />
+                                    <img src="images/upload-icon.svg" alt="upload-icon" class="upload-icon ms-5 mb-1" />
                                 </label>
                                 <input id="file-input" type="file" />
                             </div>
@@ -256,15 +255,17 @@
                         <div class="col-md-3">
                             <label for="Company name " class="form-label-1">First Name
                             </label>
-                            <input type="text" class="form-control mt-1" id="Company name" name="staffname" placeholder="Ezhil" />
+                            <input type="text" class="form-control mt-1" id="Company name" name="firstname"
+                                placeholder="Ezhil" />
                         </div>
                         <div class="col-md-3">
                             <label for="Location " class="form-label-1">Last Name</label>
-                            <input type="text" class="form-control mt-1" id="Location" placeholder="Arasi" />
+                            <input type="text" class="form-control mt-1" id="Location" name="lastname"
+                                placeholder="Arasi" />
                         </div>
                         <div class="col-md-3">
                             <label for="Account Manager" class="form-label-1">Date of Birth</label>
-                            <input type="date" class="form-control mt-1" id="Account Manager"
+                            <input type="date" class="form-control mt-1" id="Account Manager" name="dob"
                                 placeholder="Ram12@gmail.com" />
                         </div>
                         <div class="col-md-3">
@@ -273,7 +274,7 @@
                             <div class="row">
                                 <div class="d-flex justify-content-around mt-3">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1"
+                                        <input class="form-check-input" type="radio" name="gender" id="gridRadios1"
                                             value="option1" checked>
                                         <label class="form-check-label" for="gridRadios1">
                                             Male
@@ -296,17 +297,18 @@
                         <div class="col-md-3">
                             <label for="Company name " class="form-label-1">Email Address
                             </label>
-                            <input type="email" class="form-control mt-1" id="Company name"
+                            <input type="email" class="form-control mt-1" id="Company name" name="email"
                                 placeholder="Ezhil@gmail.com" />
                         </div>
                         <div class="col-md-3">
                             <label for="Location " class="form-label-1">Phone Number</label>
-                            <input type="text" class="form-control mt-1" id="Location" name="phonenumber" placeholder="7639182013" />
+                            <input type="text" class="form-control mt-1" id="Location" name="phonenumber"
+                                placeholder="7639182013" name="phonenumber" />
                         </div>
                         <div class="col-md-6">
                             <label for="Billing address " class="form-label-1">Address</label>
                             <input type="text" class="form-control mt-1" id="Billing address"
-                                placeholder="Street,   City,   State,   ZIP Code" />
+                                placeholder="Street,   City,   State,   ZIP Code" name="address" />
                         </div>
                     </div>
                     <hr class="mt-4">
@@ -317,65 +319,66 @@
                         <div class="col-md-3">
                             <label for="Company name " class="form-label-1">Staff User ID
                             </label>
-                            <input type="text" class="form-control mt-1" id="Company name" placeholder="EzhilVM01" />
+                            <input type="text" class="form-control mt-1" id="Company name" placeholder="EzhilVM01" name="staffuserid" />
                         </div>
                         <div class="col-md-3">
                             <label for="Location " class="form-label-1">Password</label>
-                            <input type="password" class="form-control mt-1" id="Location" placeholder="Ezhil@123" />
+                            <input type="password" class="form-control mt-1" id="Location" placeholder="Ezhil@123" name="password" />
                         </div>
                         <div class="col-md-3">
                             <label for="Location " class="form-label-1">Department</label>
-                            <input type="text" class="form-control mt-1" id="Location" placeholder="Computer Science" />
+                            <input type="text" class="form-control mt-1" id="Location" name="department"
+                                placeholder="Computer Science" />
                         </div>
                         <div class="col-md-3">
                             <label for="Company name " class="form-label-1">Position/Job Title
                             </label>
-                            <input type="text" class="form-control mt-1" id="Company name" placeholder="Professor" />
+                            <input type="text" class="form-control mt-1" id="Company name" placeholder="Professor" name="position" />
                         </div>
                     </div>
                     <div class="row col-md-12 ps-4 mt-4">
                         <div class="col-md-3">
                             <label for="Location " class="form-label-1">Date of Joining</label>
-                            <input type="date" class="form-control mt-1" id="Location" placeholder="Arasi" />
+                            <input type="date" class="form-control mt-1" id="Location" placeholder="Arasi" name="joindate"/>
                         </div>
                     </div>
                     <hr class="mt-4">
 
-                     <!-- Educational Information -->
-                     <div class="row col-md-12 ps-4 mt-4">
+                    <!-- Educational Information -->
+                    <div class="row col-md-12 ps-4 mt-4">
                         <h5>Educational Information</h5>
                         <div class="col-md-3">
                             <label for="Company name " class="form-label-1">Highest Degree Attained
                             </label>
-                            <input type="text" class="form-control mt-1" id="Company name" placeholder="MCA" />
+                            <input type="text" class="form-control mt-1" id="Company name" placeholder="MCA" name="degeree" />
                         </div>
                         <div class="col-md-3">
                             <label for="Location " class="form-label-1">Major/Field of Study</label>
-                            <input type="text" class="form-control mt-1" id="Location" placeholder="Computer Science" />
+                            <input type="text" class="form-control mt-1" id="Location" placeholder="Computer Science" name="field" />
                         </div>
                         <div class="col-md-3">
                             <label for="Location " class="form-label-1">Institution</label>
-                            <input type="text" class="form-control mt-1" id="Location" placeholder="Vidya Mandir" />
+                            <input type="text" class="form-control mt-1" id="Location" placeholder="Vidya Mandir" name="institution" />
                         </div>
                         <div class="col-md-3">
                             <label for="Company name " class="form-label-1">Graduation Year
                             </label>
-                            <input type="date" class="form-control mt-1" id="Company name" placeholder="Professor" />
+                            <input type="date" class="form-control mt-1" id="Company name" placeholder="Professor" name="graduationyear" />
                         </div>
                     </div>
                     <div class="row col-md-12 ps-4 mt-4">
                         <div class="col-md-3">
                             <label for="Location " class="form-label-1">Previous Workplaces</label>
-                            <input type="text" class="form-control mt-1" id="Location" placeholder="Adhiyaman " />
+                            <input type="text" class="form-control mt-1" id="Location" placeholder="Adhiyaman " name="pwork" />
                         </div>
                         <div class="col-md-3">
                             <label for="Location " class="form-label-1">Positions Held</label>
-                            <input type="text" class="form-control mt-1" id="Location" placeholder="Professor" />
+                            <input type="text" class="form-control mt-1" id="Location" placeholder="Professor" name="positionheld"/>
                         </div>
                         <div class="col-md-3">
                             <label for="Company name " class="form-label-1">Years of Experience
                             </label>
-                            <input type="text" class="form-control mt-1" id="Company name" placeholder="5 Years" />
+                            <input type="text" class="form-control mt-1" id="Company name" placeholder="5 Years" name="experiance"/>
                         </div>
                     </div>
                     <hr class="mt-4">
@@ -395,33 +398,32 @@
                             <div class="image-upload d-flex align-items-center Uploadlogo mt-1">
                                 <label for="file-input">
                                     <span class="ms-3 Uploadlogo-text pe-5">Upload Certificate</span>
-                                    <img src="/images/upload-icon.svg" alt="upload-icon"
-                                        class="upload-icon ms-5 mb-1" />
+                                    <img src="images/upload-icon.svg" alt="upload-icon" class="upload-icon ms-5 mb-1" />
                                 </label>
                                 <input id="file-input" type="file" />
                             </div>
                         </div>
                         <div class="col-8"></div>
                         <div class="col-1">
-                            <button  class="btn btn-primary">+ Add</button>
+                            <button class="btn btn-primary">+ Add</button>
                         </div>
                     </div>
                     <div class="col-12 d-flex">
                         <div class="col-9"></div>
                         <div class="d-flex col-3 justify-content-between pe-4 pt-5 pb-5">
                             <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
-                            data-bs-target="#staticBackdrop1">
-                            Cancel
-                        </button>
+                                data-bs-target="#staticBackdrop1">
+                                Cancel
+                            </button>
                             <button type="submit" class="btn btn-primary" data-bs-toggle="modal"
                                 data-bs-target="#staticBackdrop1">
                                 Create Staff
                             </button>
                         </div>
                     </div>
-    
+
                 </form>
-               
+
                 <!-- pop -- up -- for create client  -->
                 <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false"
                     tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
