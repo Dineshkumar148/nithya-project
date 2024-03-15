@@ -42,7 +42,7 @@ $result = mysqli_query($conn,$query);
                             <ul class="navbar-nav nav-pills">
                                 <!-- Dashboard -->
                                 <li class="nav-item d-flex mb-4">
-                                    <a href="/rework-timesheet/dashboard/Dashboard.html"
+                                    <a href="#"
                                         class="nav-link w-100 d-flex ps-3 align-items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                             viewBox="0 0 15 15" fill="none">
@@ -53,7 +53,7 @@ $result = mysqli_query($conn,$query);
                                         <span class="ps-3" style="color: #4a4a4a">Dashboard</span>
                                     </a>
                                 </li>
-                                <!-- My clients -->
+                                <!-- My staff -->
                                 <li class="nav-item d-flex mb-4">
                                     <a href="#" class="nav-link w-100 d-flex ps-3 align-items-center active">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
@@ -65,9 +65,9 @@ $result = mysqli_query($conn,$query);
                                         <span class="ps-3" style="color: white">My Staff</span>
                                     </a>
                                 </li>
-                                <!-- My employees -->
+                                <!-- my student -->
                                 <li class="nav-item d-flex mb-4">
-                                    <a href="/rework-timesheet/my employee/employee-list.html"
+                                    <a href="/nithya-project/student-list.php"
                                         class="nav-link w-100 d-flex ps-3 align-items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                             viewBox="0 0 12 15" fill="none">
@@ -81,7 +81,7 @@ $result = mysqli_query($conn,$query);
 
                                 <!-- My timesheet -->
                                 <li class="nav-item d-flex mb-4">
-                                    <a href="/rework-timesheet/My Timesheet/timesheet.html"
+                                    <a href="#"
                                         class="nav-link w-100 d-flex ps-3 align-items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="24"
                                             viewBox="0 0 17 19" fill="none">
@@ -104,7 +104,7 @@ $result = mysqli_query($conn,$query);
                                 </li>
                                 <!-- My timesheet -->
                                 <li class="nav-item d-flex mb-4">
-                                    <a href="/rework-timesheet/My Timesheet/timesheet.html"
+                                    <a href="#"
                                         class="nav-link w-100 d-flex ps-3 align-items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="24"
                                             viewBox="0 0 17 19" fill="none">
@@ -128,7 +128,7 @@ $result = mysqli_query($conn,$query);
 
                                 <!-- Reports -->
                                 <li class="nav-item d-flex">
-                                    <a href="/rework-timesheet/Reports/Reports.html"
+                                    <a href="#"
                                         class="nav-link w-100 d-flex ps-3 align-items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="24"
                                             viewBox="0 0 14 19" fill="none">
@@ -210,7 +210,7 @@ $result = mysqli_query($conn,$query);
                                 <li><a class="dropdown-item" href="#">Help</a></li>
                                 <hr />
                                 <li>
-                                    <a class="dropdown-item" href="/rework-timesheet/loginpage/loginpage.html">Log
+                                    <a class="dropdown-item" href="/nithya-project/Login.html">Log
                                         out</a>
                                 </li>
                             </ul>
@@ -234,7 +234,7 @@ $result = mysqli_query($conn,$query);
                     <div class="col-12  mt-3">
                         <table class="table">
                             <tr id="table-head">
-                                <th>Staff ID</th>
+                                <th>S.No.</th>
                                 <th>staff Name</th>
                                 <th>Email ID</th>
                                 <th>Department</th>
@@ -254,8 +254,8 @@ $result = mysqli_query($conn,$query);
                     </td>
                <td><?php echo $row['firstname'] ?>  <?php echo $row['lastname'] ?></td>
                <td><?php echo $row['email'] ?></td>
-               <td><?php echo $row['dob'] ?></td>
                <td><?php echo $row['department'] ?></td>
+               <td><?php echo $row['position'] ?></td>
 
 
                </tr>

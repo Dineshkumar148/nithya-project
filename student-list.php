@@ -1,12 +1,17 @@
+<?php
+require_once('db_config.php');
+$query = "select * from cstudentreate";
+$result = mysqli_query($conn,$query);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Create Staff</title>
+    <title>Student List</title>
     <!-- css -- link -->
-    <link rel="stylesheet" href="create-staff.css" />
+    <link rel="stylesheet" href="staff-list.css" />
     <!-- font -- link -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish" />
@@ -27,7 +32,7 @@
                 <nav class="navbar">
                     <div class="col-12 mb-5 d-flex justify-content-center">
                         <a href="Dashboard.html" class="navbar-brand">
-                            <img src="images/svm-logo-2.jpg" class="img-fluid" alt="vidyamandirlogo" />
+                            <img src="images/svm-logo-2.jpg" class="img-fluid" alt="buildintlogo" />
                         </a>
                     </div>
 
@@ -37,7 +42,7 @@
                             <ul class="navbar-nav nav-pills">
                                 <!-- Dashboard -->
                                 <li class="nav-item d-flex mb-4">
-                                    <a href="/"
+                                    <a href="#"
                                         class="nav-link w-100 d-flex ps-3 align-items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                             viewBox="0 0 15 15" fill="none">
@@ -48,35 +53,37 @@
                                         <span class="ps-3" style="color: #4a4a4a">Dashboard</span>
                                     </a>
                                 </li>
-                                <!-- My clients -->
+                                <!-- My staff -->
                                 <li class="nav-item d-flex mb-4">
-                                    <a href="#" class="nav-link w-100 d-flex ps-3 align-items-center active">
+                                <a href="/nithya-project/staff-list.php"
+                                        class="nav-link w-100 d-flex ps-3 align-items-center">
+                                       
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
                                             viewBox="0 0 15 14" fill="none">
                                             <path
                                                 d="M10.125 0C8.26102 0 6.75 1.51125 6.75 3.375C6.75 5.23875 8.26102 6.75 10.125 6.75C11.989 6.75 13.5 5.23875 13.5 3.375C13.5 1.51125 11.989 0 10.125 0ZM4.5 0.75C2.84317 0.75 1.5 2.09325 1.5 3.75C1.5 5.40675 2.84317 6.75 4.5 6.75C5.12205 6.75 5.71125 6.56025 6.2109 6.21075C6.55043 5.97375 6.6357 5.496 6.3984 5.15625C6.1611 4.8165 5.70668 4.755 5.36715 4.992C5.11748 5.16675 4.81215 5.25 4.5 5.25C3.67155 5.25 3 4.57875 3 3.75C3 2.92125 3.67155 2.25 4.5 2.25C4.74465 2.25 4.96845 2.304 5.17965 2.41425C5.54715 2.6055 6.0198 2.47651 6.2109 2.10901C6.40208 1.74226 6.25027 1.26899 5.88285 1.07849C5.45902 0.857991 4.98705 0.75 4.5 0.75ZM10.125 1.5C11.1605 1.5 12 2.33925 12 3.375C12 4.41075 11.1605 5.25 10.125 5.25C9.08947 5.25 8.25 4.41075 8.25 3.375C8.25 2.33925 9.08947 1.5 10.125 1.5ZM2.29688 7.758C0.9213 8.32575 0 9.717 0 11.25V12.75C0 13.164 0.335775 13.5 0.75 13.5H3.75C4.16423 13.5 4.5 13.164 4.5 12.75C4.5 12.336 4.16423 12 3.75 12H1.5V11.25C1.5 10.407 2.00002 9.63301 2.57475 9.29251C3.11527 9.52051 3.68708 9.69301 4.19558 9.73576C4.60838 9.77101 4.9806 9.45976 5.01562 9.04651C5.05065 8.63401 4.75238 8.28452 4.33965 8.24927C4.0104 8.22152 3.65055 8.1225 3.23438 7.9455C3.13387 7.90275 3.07552 7.869 2.88285 7.78125C2.69392 7.695 2.48872 7.6785 2.29688 7.758ZM7.54688 7.758C6.1713 8.32575 5.25 9.717 5.25 11.25V12.75C5.25 13.164 5.58577 13.5 6 13.5H14.25C14.6642 13.5 15 13.164 15 12.75V11.25C15 9.753 14.0736 8.3955 12.7031 7.8045C12.5102 7.72125 12.2854 7.719 12.0938 7.8045C11.4302 8.10225 10.7837 8.25 10.125 8.25C9.4686 8.25 8.81985 8.094 8.13285 7.78125C7.94392 7.695 7.73873 7.6785 7.54688 7.758ZM7.83525 9.29251C8.54385 9.56101 9.39818 9.75 10.125 9.75C10.8461 9.75 11.6651 9.57373 12.3594 9.31723C13.0364 9.70273 13.5 10.4242 13.5 11.25V12H6.75V11.25C6.75 10.3763 7.24192 9.63976 7.83525 9.29251Z"
-                                                fill="white" />
+                                                fill="#4A4A4A"/>
                                         </svg>
-                                        <span class="ps-3" style="color: white">My Staff</span>
+                                        <span class="ps-3" style="color: #4a4a4a">My Staff</span>
                                     </a>
                                 </li>
-                                <!-- My employees -->
+                                <!-- My student -->
                                 <li class="nav-item d-flex mb-4">
-                                    <a href=""
-                                        class="nav-link w-100 d-flex ps-3 align-items-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                  
+                                <a href="#" class="nav-link w-100 d-flex ps-3 align-items-center active">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                             viewBox="0 0 12 15" fill="none">
                                             <path
                                                 d="M6 0C3.89705 0 2.19231 1.67917 2.19231 3.75C2.19231 5.82083 3.89705 7.5 6 7.5C8.10295 7.5 9.80769 5.82083 9.80769 3.75C9.80769 1.67917 8.10295 0 6 0ZM6 1.66667C7.16828 1.66667 8.11539 2.59917 8.11539 3.75C8.11539 4.90083 7.16828 5.83333 6 5.83333C4.83172 5.83333 3.88462 4.90083 3.88462 3.75C3.88462 2.59917 4.83172 1.66667 6 1.66667ZM3.09135 8.62C1.53942 9.25083 0.5 10.7967 0.5 12.5V14.1667C0.5 14.6267 0.878823 15 1.34615 15H10.6538C11.1212 15 11.5 14.6267 11.5 14.1667V12.5C11.5 10.8367 10.4548 9.32834 8.90865 8.67167C8.69102 8.57917 8.43743 8.57667 8.22115 8.67167C7.47248 9.00251 6.74309 9.16667 6 9.16667C5.25945 9.16667 4.52752 8.99333 3.75245 8.64583C3.5393 8.55 3.30779 8.53166 3.09135 8.62ZM3.41669 10.325C4.21614 10.6233 5.17999 10.8333 6 10.8333C6.81358 10.8333 7.73758 10.6375 8.52086 10.3525C9.2846 10.7808 9.80769 11.5825 9.80769 12.5V13.3333H2.19231V12.5C2.19231 11.5292 2.7473 10.7108 3.41669 10.325Z"
-                                                fill="#4A4A4A" />
+                                                fill="white" />
                                         </svg>
-                                        <span class="ps-3" style="color: #4a4a4a">My Students</span>
+                                        <span class="ps-3" style="color: white">My Student</span>
                                     </a>
                                 </li>
 
                                 <!-- My timesheet -->
                                 <li class="nav-item d-flex mb-4">
-                                    <a href=""
+                                    <a href="#"
                                         class="nav-link w-100 d-flex ps-3 align-items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="24"
                                             viewBox="0 0 17 19" fill="none">
@@ -97,9 +104,9 @@
                                         <span class="ps-3" style="color: #4a4a4a">Staff Register</span>
                                     </a>
                                 </li>
-                                <!-- My timesheet -->
+                                <!-- Students Register -->
                                 <li class="nav-item d-flex mb-4">
-                                    <a href="/"
+                                    <a href="#"
                                         class="nav-link w-100 d-flex ps-3 align-items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="24"
                                             viewBox="0 0 17 19" fill="none">
@@ -123,7 +130,7 @@
 
                                 <!-- Reports -->
                                 <li class="nav-item d-flex">
-                                    <a href=""
+                                    <a href="#"
                                         class="nav-link w-100 d-flex ps-3 align-items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="24"
                                             viewBox="0 0 14 19" fill="none">
@@ -205,247 +212,70 @@
                                 <li><a class="dropdown-item" href="#">Help</a></li>
                                 <hr />
                                 <li>
-                                    <a class="dropdown-item" href="/rework-timesheet/loginpage/loginpage.html">Log
+                                    <a class="dropdown-item" href="/nithya-project/Login.html">Log
                                         out</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
+
                 <!--  main container section  -->
+                <div class="container">
+                    <div class="col-12 d-flex mt-3 justify-content-between">
 
-                <div class="col-12 ps-4 mt-3">
-                    <div class="project-heading">
-                        <h2>Create Staff</h2>
-                        <p>
-                            <a href="/rework-timesheet/My Clients/Clients_List.html"
-                                style="text-decoration: none; color: #000000">Staff List</a>
-                            /
-                            <span>Create Staff</span>
-                        </p>
-                    </div>
-                </div>
-
-                <form action="create.php" method="post" class="client-form">
-                    <div class="ps-4">
-                        <h5>Personal Information</h5>
-                    </div>
-                    <div class="ps-4">
-                        <label for="Logo" class="form-label-1">Staff Photo</label>
-                    </div>
-
-                    <!-- upload button -->
-
-                    <div class="col-md-12">
-                        <div class="col-3 ps-4">
-                            <div class="image-upload d-flex align-items-center Uploadlogo mt-1">
-                                <label for="file-input">
-                                    <span class="ms-3 Uploadlogo-text pe-5">Upload Staff Photo</span>
-                                    <img src="images/upload-icon.svg" alt="upload-icon" class="upload-icon ms-5 mb-1" />
-                                </label>
-                                <input id="file-input" type="file" />
-                            </div>
-                        </div>
-                        <div class="col-3"></div>
-                        <div class="col-3"></div>
-                        <div class="col-3"></div>
-                    </div>
-                    <!-- Personal Information: -->
-                    <div class="row col-md-12 ps-4 mt-4">
-                        <div class="col-md-3">
-                            <label for="Company name " class="form-label-1">First Name
-                            </label>
-                            <input type="text" class="form-control mt-1" id="Company name" name="firstname"
-                                placeholder="Ezhil" />
-                        </div>
-                        <div class="col-md-3">
-                            <label for="Location " class="form-label-1">Last Name</label>
-                            <input type="text" class="form-control mt-1" id="Location" name="lastname"
-                                placeholder="Arasi" />
-                        </div>
-                        <div class="col-md-3">
-                            <label for="Account Manager" class="form-label-1">Date of Birth</label>
-                            <input type="date" class="form-control mt-1" id="Account Manager" name="dob"
-                                placeholder="Ram12@gmail.com" />
-                        </div>
-                        <div class="col-md-3">
-                            <label for="Web Address" class="form-label-1">Gender</label>
-
-                            <div class="row">
-                                <div class="d-flex justify-content-around mt-3">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="gender" id="gridRadios1"
-                                            value="option1" checked>
-                                        <label class="form-check-label" for="gridRadios1">
-                                            Male
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2"
-                                            value="option2">
-                                        <label class="form-check-label" for="gridRadios2">
-                                            Female
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <hr class="mt-4">
-                    <div class="row col-md-12 ps-4 mt-4">
-                        <h5>Contact Information</h5>
-                        <div class="col-md-3">
-                            <label for="Company name " class="form-label-1">Email Address
-                            </label>
-                            <input type="email" class="form-control mt-1" id="Company name" name="email"
-                                placeholder="Ezhil@gmail.com" />
-                        </div>
-                        <div class="col-md-3">
-                            <label for="Location " class="form-label-1">Phone Number</label>
-                            <input type="text" class="form-control mt-1" id="Location" name="phonenumber"
-                                placeholder="7639182013" name="phonenumber" />
-                        </div>
-                        <div class="col-md-6">
-                            <label for="Billing address " class="form-label-1">Address</label>
-                            <input type="text" class="form-control mt-1" id="Billing address"
-                                placeholder="Street,   City,   State,   ZIP Code" name="address" />
-                        </div>
-                    </div>
-                    <hr class="mt-4">
-
-                    <!-- Professional Information -->
-                    <div class="row col-md-12 ps-4 mt-4">
-                        <h5>Professional Information</h5>
-                        <div class="col-md-3">
-                            <label for="Company name " class="form-label-1">Staff User ID
-                            </label>
-                            <input type="text" class="form-control mt-1" id="Company name" placeholder="EzhilVM01" name="staffuserid" />
-                        </div>
-                        <div class="col-md-3">
-                            <label for="Location " class="form-label-1">Password</label>
-                            <input type="password" class="form-control mt-1" id="Location" placeholder="Ezhil@123" name="password" />
-                        </div>
-                        <div class="col-md-3">
-                            <label for="Location " class="form-label-1">Department</label>
-                            <input type="text" class="form-control mt-1" id="Location" name="department"
-                                placeholder="Computer Science" />
-                        </div>
-                        <div class="col-md-3">
-                            <label for="Company name " class="form-label-1">Position/Job Title
-                            </label>
-                            <input type="text" class="form-control mt-1" id="Company name" placeholder="Professor" name="position" />
-                        </div>
-                    </div>
-                    <div class="row col-md-12 ps-4 mt-4">
-                        <div class="col-md-3">
-                            <label for="Location " class="form-label-1">Date of Joining</label>
-                            <input type="date" class="form-control mt-1" id="Location" placeholder="Arasi" name="joindate"/>
-                        </div>
-                    </div>
-                    <hr class="mt-4">
-
-                    <!-- Educational Information -->
-                    <div class="row col-md-12 ps-4 mt-4">
-                        <h5>Educational Information</h5>
-                        <div class="col-md-3">
-                            <label for="Company name " class="form-label-1">Highest Degree Attained
-                            </label>
-                            <input type="text" class="form-control mt-1" id="Company name" placeholder="MCA" name="degeree" />
-                        </div>
-                        <div class="col-md-3">
-                            <label for="Location " class="form-label-1">Major/Field of Study</label>
-                            <input type="text" class="form-control mt-1" id="Location" placeholder="Computer Science" name="field" />
-                        </div>
-                        <div class="col-md-3">
-                            <label for="Location " class="form-label-1">Institution</label>
-                            <input type="text" class="form-control mt-1" id="Location" placeholder="Vidya Mandir" name="institution" />
-                        </div>
-                        <div class="col-md-3">
-                            <label for="Company name " class="form-label-1">Graduation Year
-                            </label>
-                            <input type="date" class="form-control mt-1" id="Company name" placeholder="Professor" name="graduationyear" />
-                        </div>
-                    </div>
-                    <div class="row col-md-12 ps-4 mt-4">
-                        <div class="col-md-3">
-                            <label for="Location " class="form-label-1">Previous Workplaces</label>
-                            <input type="text" class="form-control mt-1" id="Location" placeholder="Adhiyaman " name="pwork" />
-                        </div>
-                        <div class="col-md-3">
-                            <label for="Location " class="form-label-1">Positions Held</label>
-                            <input type="text" class="form-control mt-1" id="Location" placeholder="Professor" name="positionheld"/>
-                        </div>
-                        <div class="col-md-3">
-                            <label for="Company name " class="form-label-1">Years of Experience
-                            </label>
-                            <input type="text" class="form-control mt-1" id="Company name" placeholder="5 Years" name="experiance"/>
-                        </div>
-                    </div>
-                    <hr class="mt-4">
-
-
-                    <div class="ps-4">
-                        <h5>Skills and Certification</h5>
-                    </div>
-                    <div class="ps-4">
-                        <label for="Logo" class="form-label-1">Skills / Certificate</label>
-                    </div>
-
-                    <!-- upload button -->
-
-                    <div class="col-12 d-flex">
-                        <div class="col-3 ps-4">
-                            <div class="image-upload d-flex align-items-center Uploadlogo mt-1">
-                                <label for="file-input">
-                                    <span class="ms-3 Uploadlogo-text pe-5">Upload Certificate</span>
-                                    <img src="images/upload-icon.svg" alt="upload-icon" class="upload-icon ms-5 mb-1" />
-                                </label>
-                                <input id="file-input" type="file" />
-                            </div>
-                        </div>
-                        <div class="col-8"></div>
-                        <div class="col-1">
-                            <button class="btn btn-primary">+ Add</button>
-                        </div>
-                    </div>
-                    <div class="col-12 d-flex">
-                        <div class="col-9"></div>
-                        <div class="d-flex col-3 justify-content-between pe-4 pt-5 pb-5">
-                            <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
-                                data-bs-target="#staticBackdrop1">
-                                Cancel
-                            </button>
-                            <button type="submit" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#staticBackdrop1">
-                                Create Staff
-                            </button>
+                        <h2 class="my-client-text pt-2">My student List</h2>
+                        <!-- search box -->
+                        <div class="d-flex search-container justify-content-end align-items-center">
+                            <input id="searchbar" class="ps-3" type="search" name="search" placeholder="Search Staff">
+                            <button class="material-symbols-outlined search-icon border-0 bg-body  me-3">search</button>
                         </div>
                     </div>
 
-                </form>
+                    <!-- client -- list --table -- start -->
+                    <div class="col-12  mt-3">
+                        <table class="table">
+                            <tr id="table-head">
+                            <th>S.No.</th>
+                                <th>Student Name</th>
+                                <th>DOB</th>
+                                <th>Phone Number</th>
+                                <th>Department</th>
+                                <th>Address</th>
+                            </tr>
+                            <tbody>
+                            <tr>
+               <?php 
+               while ($row = mysqli_fetch_assoc($result)) 
+               {
+                $student_id=$row['id'];
+                ?>
+                <td>
+                <a href="/connection/empdetail.php?id= <?php echo $student_id ?>">
+                    <?php echo $student_id ?>
+                    </a>
+                    </td>
+               <td><?php echo $row['firstname'] ?>  <?php echo $row['lastname'] ?></td>
+               <td><?php echo $row['dob'] ?></td>
+               <td><?php echo $row['phonenumber'] ?></td>
+               <td><?php echo $row['department'] ?></td>
+               <td><?php echo $row['address'] ?></td>
 
-                <!-- pop -- up -- for create client  -->
-                <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false"
-                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content" style="height: 185px; width: 450px; border-radius: 12px">
-                            <div class="d-flex justify-content-end mt-2 me-2">
-                                <button type="button" class="btn-close" 
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="d-flex justify-content-center">
-                                <img src="/nithya-project/images/popupicon.png" width="40" height="40"
-                                    alt="create staff sucess popup icon" />
-                            </div>
-                            <h5 class="d-flex justify-content-center mt-3">
-                                Staff Created Successfully
-                            </h5>
-                            <div class="d-flex justify-content-center mt-3 pb-3">
-                                <a class="btn btn-primary client-create-pop-button d-flex justify-content-center align-items-center"
-                                    href="" role="button"><span
-                                        style="font-size: 12px">OK</span></a>
-                            </div>
-                        </div>
+
+
+               </tr>
+               <?php
+               }
+            ?>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- create (+)button -->
+                    <div class="d-flex justify-content-end align-items-end mt-5">
+                        <a class="btn btn-primary create-button d-flex align-items-center justify-content-center"
+                            href="/nithya-project/create-student.html" role="button">
+                            <span class="material-symbols-outlined fw-bold">add</span>
+                        </a>
                     </div>
                 </div>
             </div>
